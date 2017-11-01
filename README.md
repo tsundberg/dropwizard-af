@@ -1,4 +1,4 @@
-# Dropwizard - ett enkelt alternativ för Arbetsformedlingen
+# Dropwizard - ett enkelt alternativ för Arbetsförmedlingen
 
 ## Building
 
