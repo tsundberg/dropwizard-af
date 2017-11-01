@@ -1,0 +1,40 @@
+import java.text.SimpleDateFormat
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:2.0.1'
+    }
+}
+
+apply plugin: 'com.github.johnrengelman.shadow'
+apply plugin: 'java'
+
+group = 'se.arbetsformedlingen.dropwizard'
+version = '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'io.dropwizard:dropwizard-core:1.2.0'
+
+    testCompile 'org.mockito:mockito-core:2.11.0'
+    testCompile 'org.assertj:assertj-core:3.8.0'
+    testCompile 'junit:junit:4.12'
+    testCompile 'io.dropwizard:dropwizard-testing:1.2.0'
+}
+
+shadowJar {
+    it.dependsOn build
+    exclude 'META-INF/*.DSA'
+    exclude 'META-INF/*.RSA'
+    manifest {
+        attributes 'Main-Class': 'se.arbetsformedlingen.dropwizard.Main',
+                'Build-Date': new SimpleDateFormat("yyyy-MM-dd HH:mm").format(new Date())
+    }
+}
+
