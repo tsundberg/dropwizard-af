@@ -24,7 +24,6 @@ public class HelloTest {
     public void should_produce_a_readable_toString() throws Exception {
         Hello hello = new Hello(17, "Luther Blissett");
 
-
         assertThat(hello.toString()).isEqualTo("Saying{id=17, content='Luther Blissett'}");
     }
 }
