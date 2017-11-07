@@ -4,7 +4,7 @@
 
 The project is built using Gradle wrapper.
 
-    ./gradlew clean build
+    ./gradlew clean shadowJar
     
 ## Run
 
